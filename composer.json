@@ -1,6 +1,6 @@
 {
     "name": "kronthto/laravel-oauth2-login",
-    "description": "Provides a middleware to protect ressources requiring an OAuth2 login",
+    "description": "Provides a middleware to protect resources requiring an OAuth2 login",
     "keywords": [
         "OAuth2",
         "Laravel",
