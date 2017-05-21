@@ -56,7 +56,7 @@ class MiddlewareTest extends TestCase
     }
 
     /**
-     * If the token is corrent we expect it to be added as an request attribute.
+     * If the token is correct we expect it to be added as an request attribute.
      */
     public function testAddsUserinfoToRequest()
     {
