@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- Configuration option to specify a custom OAuth2 provider class
 
 ## 1.0.0 - 2017-05-21
 ### Added

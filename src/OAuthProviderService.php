@@ -15,7 +15,9 @@ class OAuthProviderService
      */
     public function __construct()
     {
-        $this->provider = new OAuthProvider(config('oauth2login.oauthconf'));
+        $providerClass = config('oauth2login.provider');
+
+        $this->provider = new $providerClass(config('oauth2login.oauthconf'));
     }
 
     /**

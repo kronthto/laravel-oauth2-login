@@ -9,6 +9,7 @@ return [
         'urlAccessToken' => 'http://brentertainment.com/oauth2/lockdin/token',
         'urlResourceOwnerDetails' => 'http://brentertainment.com/oauth2/lockdin/resource',
     ],
+    'provider' => \Kronthto\LaravelOAuth2Login\OAuthProvider::class,
 
     'oauth_redirect_path' => '/oauth2/callback',
 
