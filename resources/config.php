@@ -17,6 +17,8 @@ return [
     'session_key_state' => 'oauth2_auth_state',
 
     'resource_owner_attribute' => 'oauth2_user',
+    'auth_driver_key' => 'oauth2',
+    'authWrapper' => \Kronthto\LaravelOAuth2Login\OAuthUserWrapper::class,
 
     'cacheUserDetailsFor' => 30, // minutes
     'cacheUserPrefix' => 'oauth_user_',

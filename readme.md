@@ -14,6 +14,7 @@ You could describe it as a bridge between Laravel and [league/oauth2-client](htt
 * Keeps token in session
 * Refreshes expired tokens
 * (Cached) resource owner info
+* Driver to allow use of `Auth` facade
 
 ## Install
 

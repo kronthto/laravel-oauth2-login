@@ -2,12 +2,14 @@
 
 namespace Tests;
 
+use Auth;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithSession;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use Kronthto\LaravelOAuth2Login\OAuthProvider;
 use Kronthto\LaravelOAuth2Login\OAuthProviderService;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
+use League\OAuth2\Client\Provider\GenericResourceOwner;
 use League\OAuth2\Client\Token\AccessToken;
 use function GuzzleHttp\Psr7\parse_query;
 
@@ -31,7 +33,7 @@ class MiddlewareTest extends TestCase
         $router->get('web/email', [
             'as' => 'web.email',
             'uses' => function (Request $request) {
-                return $request->attributes->get(config('oauth2login.resource_owner_attribute'))->email;
+                return $request->attributes->get(config('oauth2login.resource_owner_attribute'))->toArray()['email'];
             },
         ]);
     }
@@ -57,6 +59,7 @@ class MiddlewareTest extends TestCase
 
     /**
      * If the token is correct we expect it to be added as an request attribute.
+     * Also, the Auth guard should know about the successful auth.
      */
     public function testAddsUserinfoToRequest()
     {
@@ -70,8 +73,9 @@ class MiddlewareTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $userInfo = new \stdClass();
-        $userInfo->email = 'foo@bar.de';
+        $userInfo = new GenericResourceOwner([
+            'email' => 'foo@bar.de',
+        ], 'email');
         $oauthProviderMock->method('getTokenUser')->with($token)->willReturn($userInfo);
         $this->app->instance(OAuthProviderService::class, $oauthProviderMock);
 
@@ -81,6 +85,12 @@ class MiddlewareTest extends TestCase
         ])->get('web/email');
 
         $response->assertSeeText('foo@bar.de');
+
+        $authGuard = Auth::guard('oauth2guard');
+        $this->assertTrue($authGuard->check());
+        $this->assertSame($userInfo, $authGuard->user()->getResourceOwner());
+        $this->assertSame('foo@bar.de', $authGuard->user()->email);
+        $this->assertSame('foo@bar.de', $authGuard->id());
     }
 
     /**
@@ -156,5 +166,8 @@ class MiddlewareTest extends TestCase
 
         $response->assertSessionMissing(config('oauth2login.session_key'));
         $response->assertStatus(302);
+
+        $authGuard = Auth::guard('oauth2guard');
+        $this->assertFalse($authGuard->check());
     }
 }
