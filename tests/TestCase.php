@@ -18,6 +18,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         /** @var \Illuminate\Contracts\Config\Repository $config */
         $config = $app['config'];
 
+        $config->set('auth.guards.oauth2guard', [
+            'driver' => 'oauth2',
+        ]);
         $config->set('app.url', 'http://app.testing');
     }
 
