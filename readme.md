@@ -29,6 +29,19 @@ Add the `Kronthto\LaravelOAuth2Login\CheckOAuth2` middleware to the routes (-gro
 
 **Bear in mind that this only ensures that some user is logged in**, if you require further authorization checks those will still have to be implemented. This package stores the resource owner info as an Request-attribute to enable you to do so.
 
+### `Auth` guard
+
+This is optional, as adding the middleware redirects the client anyways if not authenticated. If you want to utilize Policies however you will need to define a custom guard. A driver for it is provided by this package.
+
+In your auth config, add the new guard like this:
+``` php
+  'oauth2' => [
+    'driver' => 'oauth2', // Config: oauth2login.auth_driver_key
+  ]
+```
+
+**You will need to assign a higher priority to `CheckOAuth2` than `\Illuminate\Auth\Middleware\Authenticate`**, do this by overriding `$middlewarePriority` in your Http-Kernel.
+
 ## Changelog
 
 Please see the [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
