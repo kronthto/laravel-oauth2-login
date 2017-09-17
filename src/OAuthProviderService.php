@@ -59,9 +59,12 @@ class OAuthProviderService
      */
     public function getTokenUser(AccessToken $token)
     {
-        return Cache::remember($this->getTokenUserCacheKey($token), config('oauth2login.cacheUserDetailsFor'),
+        return Cache::remember(
+            $this->getTokenUserCacheKey($token),
+            config('oauth2login.cacheUserDetailsFor'),
             function () use ($token) {
                 return $this->getProvider()->getResourceOwner($token);
-            });
+            }
+        );
     }
 }
