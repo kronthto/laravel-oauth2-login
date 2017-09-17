@@ -43,6 +43,13 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kronthto\\LaravelOAuth2Login\\ServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
