@@ -1,17 +1,18 @@
 language: php
 php:
-  - 5.6
   - 7.0
   - 7.1
+  - 7.2
 
 env:
-  global:
-    - laravel=5.x
+  matrix:
+    - laravel=5.5.x
+    - laravel=5.4.x
 
 matrix:
   include:
-    - php: 7.0
-      env: laravel=5.5.x
+    - php: 5.6
+      env: laravel=5.4.x
 
 cache:
   directories:

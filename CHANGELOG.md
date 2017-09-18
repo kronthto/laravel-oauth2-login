@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- Laravel 5.5 support
+- Package Auto-Discovery
 
 ## [1.2.0] - 2017-06-29
 ### Added
