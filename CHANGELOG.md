@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Laravel 5.5 support
 - Package Auto-Discovery
 
+### Changed
+- Travis build matrix
+
+### Fixed
+- PHP 5.6 install stuck because of (loose) testbench constraints
+
 ## [1.2.0] - 2017-06-29
 ### Added
 - `Auth`-driver *viaRequest* & `Authenticatable` wrapper

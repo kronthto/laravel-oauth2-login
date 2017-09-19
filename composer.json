@@ -23,7 +23,7 @@
         "league/oauth2-client": "^2.2"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0",
+        "orchestra/testbench": "~3.4|~3.5",
         "phpunit/phpunit": ">=4.8 | ~6.0"
     },
     "autoload": {
@@ -50,6 +50,5 @@
             ]
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true
 }
