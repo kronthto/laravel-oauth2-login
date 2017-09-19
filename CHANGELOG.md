@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - Travis build matrix
 - Improved dependency version constraints
+- Allow `league/oauth2-client` also at v1 - even though I don't recommend it a short test showed no problems/incompatibilities
 
 ### Fixed
 - PHP 5.6 install stuck because of (loose) testbench constraints
