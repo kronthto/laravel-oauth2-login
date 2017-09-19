@@ -12,7 +12,7 @@ env:
 matrix:
   include:
     - php: 5.6
-      env: laravel=5.4.x
+      env: laravel=default
 
 cache:
   directories:
@@ -22,10 +22,9 @@ sudo: false
 
 before_install:
   - phpenv config-rm xdebug.ini
-  - travis_retry composer self-update
 
 install:
-  - travis_retry composer require illuminate/support:${laravel} --no-update --no-interaction
+  - if [ "$laravel" = "default" ]; travis_retry composer require illuminate/support:${laravel} --no-update --no-interaction; fi;
   - travis_retry composer install --prefer-dist --no-interaction --no-suggest
 
 script: vendor/bin/phpunit --verbose
