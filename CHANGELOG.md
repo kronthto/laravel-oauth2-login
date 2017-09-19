@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 - Travis build matrix
+- Improved dependency version constraints
 
 ### Fixed
 - PHP 5.6 install stuck because of (loose) testbench constraints
