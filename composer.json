@@ -19,7 +19,7 @@
     "homepage": "https://github.com/kronthto/laravel-oauth2-login",
     "require": {
         "php": ">=5.6.0",
-        "illuminate/support": "5.4.x|5.5.x|5.6.x",
+        "illuminate/support": "5.4.x|5.5.x|5.6.x|5.7.x",
         "league/oauth2-client": "^1.0.2|^2.0"
     },
     "require-dev": {
