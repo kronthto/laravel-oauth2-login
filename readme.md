@@ -20,7 +20,7 @@ You could describe it as a bridge between Laravel and [league/oauth2-client](htt
 
 * Using composer: `$ composer require kronthto/laravel-oauth2-login`
 * Register the service provider (Auto-Discovery enabled): `Kronthto\LaravelOAuth2Login\ServiceProvider`
-* Publish the config file: `$ artisan vendor:publish --provider=Kronthto\LaravelOAuth2Login\ServiceProvider`
+* Publish the config file: `$ artisan vendor:publish --provider="Kronthto\LaravelOAuth2Login\ServiceProvider"`
 * Put the credentials of your OAuth Provider in the published config
 
 ## Usage

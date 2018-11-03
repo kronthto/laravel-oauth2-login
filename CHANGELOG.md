@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - Tests: Assign the middleware as route-middleware
 
+### Fixed
+- Readme: Config publish command quotes (otherwise would need to use `\\` in namespace)
+
 ## [1.4.0] - 2018-04-19
 ### Added
 - Laravel 5.6 support
