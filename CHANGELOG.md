@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Laravel 5.7 support
 
+### Changed
+- Tests: Assign the middleware as route-middleware
+
 ## [1.4.0] - 2018-04-19
 ### Added
 - Laravel 5.6 support
