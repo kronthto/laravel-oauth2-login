@@ -21,21 +21,21 @@ class MiddlewareTest extends TestCase
     {
         $kernel = $app->make(\Illuminate\Contracts\Http\Kernel::class);
         $kernel->pushMiddleware(\Illuminate\Session\Middleware\StartSession::class);
-        $kernel->pushMiddleware(\Kronthto\LaravelOAuth2Login\CheckOAuth2::class);
 
         parent::getEnvironmentSetUp($app);
     }
 
     protected function addWebRoutes(Router $router)
     {
-        parent::addWebRoutes($router);
-
-        $router->get('web/email', [
-            'as' => 'web.email',
-            'uses' => function (Request $request) {
-                return $request->attributes->get(config('oauth2login.resource_owner_attribute'))->toArray()['email'];
-            },
-        ]);
+        $router->group(['middleware' => \Kronthto\LaravelOAuth2Login\CheckOAuth2::class], function (Router $router) {
+            parent::addWebRoutes($router);
+            $router->get('web/email', [
+                'as' => 'web.email',
+                'uses' => function (Request $request) {
+                    return $request->attributes->get(config('oauth2login.resource_owner_attribute'))->toArray()['email'];
+                },
+            ]);
+        });
     }
 
     /**
