@@ -18,7 +18,8 @@ return [
 
     'resource_owner_attribute' => 'oauth2_user',
     'auth_driver_key' => 'oauth2',
-    'authWrapper' => \Kronthto\LaravelOAuth2Login\OAuthUserWrapper::class,
+    'authWrapperFactory' => null, // Can be used to specify a factory with an __invoke (ResourceOwnerInterface passed as arg1) method to build a custom User object
+    'authWrapper' => \Kronthto\LaravelOAuth2Login\OAuthUserWrapper::class, // Ignored if authWrapperFactory is not null
 
     'cacheUserDetailsFor' => 30, // minutes
     'cacheUserPrefix' => 'oauth_user_',

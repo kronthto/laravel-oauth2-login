@@ -21,6 +21,11 @@ class AuthFromRequest
             return null;
         }
 
+        $wrapperFactory = config('oauth2login.authWrapperFactory');
+        if (null !== $wrapperFactory) {
+            return app($wrapperFactory)($resourceOwner);
+        }
+
         $wrapperClass = config('oauth2login.authWrapper');
 
         return new $wrapperClass($resourceOwner);
