@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
-
+### Added
+- Possibility to specify an "AuthWrapperFactory" allowing custom creation of the User object
 
 ## [1.5.0] - 2018-11-03
 ### Added
