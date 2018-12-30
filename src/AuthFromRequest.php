@@ -23,7 +23,9 @@ class AuthFromRequest
 
         $wrapperFactory = config('oauth2login.authWrapperFactory');
         if (null !== $wrapperFactory) {
-            return app($wrapperFactory)($resourceOwner);
+            $factoryInstance = app($wrapperFactory);
+
+            return $factoryInstance($resourceOwner);
         }
 
         $wrapperClass = config('oauth2login.authWrapper');
