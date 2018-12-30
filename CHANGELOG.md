@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+
+## [1.6.0] - 2018-12-30
 ### Added
 - Possibility to specify an "AuthWrapperFactory" allowing custom creation of the User object
 
@@ -53,7 +56,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Refreshes expired tokens
 - (Cached) resource owner info
 
-[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.2.0...v1.3.0
