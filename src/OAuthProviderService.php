@@ -2,6 +2,7 @@
 
 namespace Kronthto\LaravelOAuth2Login;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use League\OAuth2\Client\Token\AccessToken;
 
@@ -61,7 +62,7 @@ class OAuthProviderService
     {
         return Cache::remember(
             $this->getTokenUserCacheKey($token),
-            now()->addMinutes(config('oauth2login.cacheUserDetailsFor')),
+            Carbon::now()->addMinutes(config('oauth2login.cacheUserDetailsFor')),
             function () use ($token) {
                 return $this->getProvider()->getResourceOwner($token);
             }
