@@ -61,7 +61,7 @@ class OAuthProviderService
     {
         return Cache::remember(
             $this->getTokenUserCacheKey($token),
-            config('oauth2login.cacheUserDetailsFor'),
+            now()->addMinutes(config('oauth2login.cacheUserDetailsFor')),
             function () use ($token) {
                 return $this->getProvider()->getResourceOwner($token);
             }
