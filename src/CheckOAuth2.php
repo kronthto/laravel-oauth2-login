@@ -49,6 +49,8 @@ class CheckOAuth2
      * @param AccessToken $token
      *
      * @return AccessToken
+     *
+     * @throws IdentityProviderException
      */
     protected function refreshTokenIfNecessary(AccessToken $token)
     {

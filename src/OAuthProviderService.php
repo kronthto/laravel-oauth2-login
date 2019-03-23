@@ -57,6 +57,8 @@ class OAuthProviderService
      * @param AccessToken $token
      *
      * @return \League\OAuth2\Client\Provider\ResourceOwnerInterface
+     *
+     * @throws \League\OAuth2\Client\Provider\Exception\IdentityProviderException
      */
     public function getTokenUser(AccessToken $token)
     {
