@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Fixed
+- No longer attempt refresh_token grant without token
+- Handle errors during refresh_token (same as invalid access-token -> Redirect to IP authorize)
 
 ## [1.7.0] - 2019-03-10
 ### Added
