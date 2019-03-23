@@ -140,6 +140,46 @@ class MiddlewareTest extends TestCase
     }
 
     /**
+     * Errors during refreshing (expired token) should not crash the whole request.
+     */
+    public function testRefreshTokenErrorHandling()
+    {
+        $token = new AccessToken([
+            'access_token' => 'blabla',
+            'refresh_token' => 'invalidorexpired',
+            'expires' => time() - 100000,
+        ]);
+
+        /** @var OAuthProviderService|\PHPUnit_Framework_MockObject_MockObject $oauthProviderMock */
+        $oauthProviderMock = $this->getMockBuilder(OAuthProviderService::class)
+            ->disableOriginalConstructor()
+            ->setMethods(null)
+            ->getMock();
+        $reflection = new \ReflectionClass($oauthProviderMock);
+        $reflection_property = $reflection->getProperty('provider');
+        $reflection_property->setAccessible(true);
+
+        /** @var OAuthProvider|\PHPUnit_Framework_MockObject_MockObject $fakeProvider */
+        $fakeProvider = $this->getMockBuilder(OAuthProvider::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $fakeProvider->expects($this->once())->method('getAccessToken')->with('refresh_token', [
+            'refresh_token' => $token->getRefreshToken(),
+        ])->willThrowException(new IdentityProviderException('Testing IdentityProviderExceptionHandling during refresh', 401, 'Refresh Token invalid or expired'));
+        $reflection_property->setValue($oauthProviderMock, $fakeProvider);
+
+        $this->app->instance(OAuthProviderService::class, $oauthProviderMock);
+
+        /** @var \Illuminate\Foundation\Testing\TestResponse|\Illuminate\Http\Response $response */
+        $response = $this->withSession([
+            config('oauth2login.session_key') => $token,
+        ])->get('web/ping');
+
+        $response->assertStatus(302);
+        $response->assertSessionMissing(config('oauth2login.session_key'));
+    }
+
+    /**
      * Unauthenticated should be redirected to the authorize endpoint.
      * The invalid token should be removed from session.
      */

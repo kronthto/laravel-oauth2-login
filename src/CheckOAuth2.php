@@ -31,9 +31,8 @@ class CheckOAuth2
             return $this->getAuthRedirect();
         }
 
-        $auth = $this->refreshTokenIfNecessary($auth);
-
         try {
+            $auth = $this->refreshTokenIfNecessary($auth);
             $resourceOwner = $this->oauthService->getTokenUser($auth);
         } catch (IdentityProviderException $e) {
             $request->session()->remove(config('oauth2login.session_key'));
