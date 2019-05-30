@@ -55,7 +55,7 @@ class CheckOnlyMiddlewareTest extends MiddlewareTest
         /** @var OAuthProviderService|\PHPUnit_Framework_MockObject_MockObject $oauthProviderMock */
         $oauthProviderMock = $this->getMockBuilder(OAuthProviderService::class)
             ->disableOriginalConstructor()
-            ->setMethods(cnull)
+            ->setMethods(null)
             ->getMock();
         $reflection = new \ReflectionClass($oauthProviderMock);
         $reflection_property = $reflection->getProperty('provider');
