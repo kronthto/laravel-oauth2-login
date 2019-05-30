@@ -29,6 +29,9 @@ Add the `Kronthto\LaravelOAuth2Login\CheckOAuth2` middleware to the routes (-gro
 
 **Bear in mind that this only ensures that some user is logged in**, if you require further authorization checks those will still have to be implemented. This package stores the resource owner info as an Request-attribute to enable you to do so.
 
+This redirects unauthenticated users. If on some routes you only want to check whether a session by this package exists (for instance to display a login/logout button in your template) use `Kronthto\LaravelOAuth2Login\OnlyCheckOAuth`. 
+It will also refresh tokens and pull up to date resource owner data, but never redirect. On failure it just doesn't set the Request attribute.
+
 ### `Auth` guard
 
 This is optional, as adding the middleware redirects the client anyways if not authenticated. If you want to utilize Policies however you will need to define a custom guard. A driver for it is provided by this package.
