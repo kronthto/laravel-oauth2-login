@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+
+## [1.8.0] - 2019-06-01
 ### Added
 - Alternative middleware that only checks but doesn't redirect if not logged
 - PHP 7.3 Travis coverage
@@ -67,7 +70,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Refreshes expired tokens
 - (Cached) resource owner info
 
-[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.1...HEAD
+[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.8.0...HEAD
+[1.8.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.5.0...v1.6.0
