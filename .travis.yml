@@ -7,6 +7,7 @@ php:
 
 env:
   matrix:
+    - laravel=6.0.x
     - laravel=5.8.x
     - laravel=5.7.x
     - laravel=5.6.x
@@ -24,6 +25,8 @@ matrix:
       env: laravel=5.7.x
     - php: 7.0
       env: laravel=5.8.x
+    - php: 7.2
+      env: laravel=6.0.x
 
 cache:
   directories:
