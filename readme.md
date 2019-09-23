@@ -4,7 +4,7 @@
 [![Latest Stable Version][ico-githubversion]][link-releases]
 [![Build Status][ico-build]][link-build]
 
-This is a Laravel5 package that provides a middleware to protect routes requiring an OAuth2 login.
+This is a Laravel5+ package that provides a middleware to protect routes requiring an OAuth2 login.
 
 You could describe it as a bridge between Laravel and [league/oauth2-client](https://github.com/thephpleague/oauth2-client).
 
