@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [Unreleased]
 
 
+## [1.9.0] - 2019-09-23
+### Added
+- Laravel 6 support
+
+### Removed
+- Laravel 5.4 / PHP 5.6 support
+
 ## [1.8.0] - 2019-06-01
 ### Added
 - Alternative middleware that only checks but doesn't redirect if not logged
@@ -70,7 +77,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Refreshes expired tokens
 - (Cached) resource owner info
 
-[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.8.0...HEAD
+[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.6.0...v1.7.0
