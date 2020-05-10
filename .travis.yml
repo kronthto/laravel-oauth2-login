@@ -6,6 +6,7 @@ php:
 
 env:
   matrix:
+    - laravel=^7.0
     - laravel=^6.0
     - laravel=5.8.x
     - laravel=5.7.x
