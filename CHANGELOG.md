@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [Unreleased]
 
 
+## [1.10.0] - 2020-05-12
+### Added
+- Laravel 7 support
+- PHP 7.4 coverage
+
 ## [1.9.0] - 2019-09-23
 ### Added
 - Laravel 6 support
@@ -77,7 +82,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Refreshes expired tokens
 - (Cached) resource owner info
 
-[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.1...v1.8.0
 [1.7.1]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.0...v1.7.1
