@@ -25,7 +25,7 @@ jobs:
       run: composer validate --strict
 
     - name: Enforce Laravel Version
-      run: composer require illuminate/support:${laravel} --no-update --no-interaction --no-suggest
+      run: composer require illuminate/support:${{ matrix.laravel }} --no-update --no-interaction --no-suggest
 
     - name: Cache Composer packages
       id: composer-cache
