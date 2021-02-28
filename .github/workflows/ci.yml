@@ -1,4 +1,4 @@
-name: PHP ${{ matrix.php-version }}  L ${{ matrix.laravel }}
+name: CI
 
 on:
   push:
@@ -11,6 +11,7 @@ on:
 jobs:
   build:
 
+    name: PHP ${{ matrix.php-version }}  L ${{ matrix.laravel }}
     runs-on: ubuntu-latest
 
     strategy:
