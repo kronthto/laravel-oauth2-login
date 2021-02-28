@@ -1,4 +1,4 @@
-name: CI
+name: PHP ${{ matrix.php-version }}  L ${{ matrix.laravel }}
 
 on:
   push:
@@ -23,6 +23,8 @@ jobs:
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-version }}
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
