@@ -4,7 +4,7 @@
 [![Latest Stable Version][ico-githubversion]][link-releases]
 [![Build Status][ico-build]][link-build]
 
-This is a Laravel5+ package that provides a middleware to protect routes requiring an OAuth2 login.
+This is a Laravel package that provides a middleware to protect routes requiring an OAuth2 login.
 
 You could describe it as a bridge between Laravel and [league/oauth2-client](https://github.com/thephpleague/oauth2-client).
 
@@ -14,7 +14,7 @@ You could describe it as a bridge between Laravel and [league/oauth2-client](htt
 * Keeps token in session
 * Refreshes expired tokens
 * (Cached) resource owner info
-* Driver to allow use of `Auth` facade
+* Driver to allow integration with `Auth/auth()`
 
 ## Install
 
@@ -29,7 +29,7 @@ Add the `Kronthto\LaravelOAuth2Login\CheckOAuth2` middleware to the routes (-gro
 
 **Bear in mind that this only ensures that some user is logged in**, if you require further authorization checks those will still have to be implemented. This package stores the resource owner info as an Request-attribute to enable you to do so.
 
-This redirects unauthenticated users. If on some routes you only want to check whether a session by this package exists (for instance to display a login/logout button in your template) use `Kronthto\LaravelOAuth2Login\OnlyCheckOAuth`. 
+This redirects unauthenticated users. If on some routes you only want to check whether a session by this package exists (for instance to display a login/logout button in your template) use `Kronthto\LaravelOAuth2Login\OnlyCheckOAuth`.
 It will also refresh tokens and pull up to date resource owner data, but never redirect. On failure it just doesn't set the Request attribute.
 
 ### `Auth` guard

@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
+### Added
+- Laravel 8 / PHP 8 support
 
+### Changed
+- Use GitHub actions instead of Travis
+
+### Removed
+- Laravel 5 / PHP <= 7.2 support
 
 ## [1.10.0] - 2020-05-12
 ### Added
