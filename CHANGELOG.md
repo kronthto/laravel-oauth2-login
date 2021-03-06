@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
+
+
+## [1.11.0] - 2021-03-06
 ### Added
 - Laravel 8 / PHP 8 support
 
@@ -89,7 +92,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Refreshes expired tokens
 - (Cached) resource owner info
 
-[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.10.0...HEAD
+[Unreleased]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.11.0...HEAD
+[1.11.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/kronthto/laravel-oauth2-login/compare/v1.7.1...v1.8.0
