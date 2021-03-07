@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [Unreleased]
 ### Added
 - A check that we are not on the callback route to prevent infinite looping in case the middleware is added globally
+- Logout method to Guard
 
 ## [1.11.0] - 2021-03-06
 ### Added

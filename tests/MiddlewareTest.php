@@ -91,6 +91,7 @@ class MiddlewareTest extends TestCase
         $this->assertSame($userInfo, $authGuard->user()->getResourceOwner());
         $this->assertSame('foo@bar.de', $authGuard->user()->email);
         $this->assertSame('foo@bar.de', $authGuard->id());
+        $response->assertSessionHas(config('oauth2login.session_key'));
     }
 
     /**

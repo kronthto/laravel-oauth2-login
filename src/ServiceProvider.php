@@ -3,7 +3,6 @@
 namespace Kronthto\LaravelOAuth2Login;
 
 use Auth;
-use Illuminate\Auth\RequestGuard;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
@@ -21,7 +20,7 @@ class ServiceProvider extends BaseServiceProvider
         $this->loadRoutesFrom($this->resourcePath().'routes.php');
 
         Auth::extend(config('oauth2login.auth_driver_key'), function () {
-            $guard = new RequestGuard(app(AuthFromRequest::class), $this->app['request']);
+            $guard = new OAuthGuard(app(AuthFromRequest::class), $this->app['request']);
 
             $this->app->refresh('request', $guard, 'setRequest');
 
