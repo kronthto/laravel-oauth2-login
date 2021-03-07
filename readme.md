@@ -45,6 +45,8 @@ In your auth config, add the new guard like this:
 
 **You will need to assign a higher priority to `CheckOAuth2` than `\Illuminate\Auth\Middleware\Authenticate`**, do this by overriding `$middlewarePriority` in your Http-Kernel.
 
+If you want to add the middleware globally, best do it as route-middleware, in `middlewareGroups.web`, rather than the very global middleware array.
+
 ## Changelog
 
 Please see the [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

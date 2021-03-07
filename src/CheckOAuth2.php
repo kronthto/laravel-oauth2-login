@@ -24,6 +24,11 @@ class CheckOAuth2
 
     public function handle(Request $request, Closure $next)
     {
+        $route = $request->route();
+        if ($route && 'oauth2login.oauth_redirect_route' === $route->getName()) {
+            return $next($request);
+        }
+
         /** @var AccessToken $auth */
         $auth = $request->session()->get(config('oauth2login.session_key'));
 

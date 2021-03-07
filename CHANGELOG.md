@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
-
+### Added
+- A check that we are not on the callback route to prevent infinite looping in case the middleware is added globally
 
 ## [1.11.0] - 2021-03-06
 ### Added
