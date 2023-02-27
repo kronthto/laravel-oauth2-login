@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.13.0] - 2023-02-27
+### Added
+- Support Laravel 9-10
+
+### Removed
+- Some older versions
+
 ## [1.12.0] - 2021-03-07
 ### Added
 - A check that we are not on the callback route to prevent infinite looping in case the middleware is added globally

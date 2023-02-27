@@ -3,6 +3,7 @@
 namespace Tests;
 
 use Auth;
+use GuzzleHttp\Psr7\Query;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithSession;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
@@ -11,7 +12,6 @@ use Kronthto\LaravelOAuth2Login\OAuthProviderService;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Provider\GenericResourceOwner;
 use League\OAuth2\Client\Token\AccessToken;
-use function GuzzleHttp\Psr7\parse_query;
 
 class MiddlewareTest extends TestCase
 {
@@ -53,7 +53,7 @@ class MiddlewareTest extends TestCase
         $this->assertStringStartsWith('http://brentertainment.com/oauth2/lockdin/authorize', $redirect);
         $response->assertSessionHas('url.intended', 'http://app.testing/web/ping');
 
-        $params = parse_query(parse_url($redirect, PHP_URL_QUERY));
+        $params = Query::parse(parse_url($redirect, PHP_URL_QUERY));
         $response->assertSessionHas(config('oauth2login.session_key_state'), $params['state']);
     }
 
